@@ -32,7 +32,25 @@ void print_test_title(const std::string& title)
   std::string banner(79, '=');
   std::cout << std::endl;
   std::cout << banner << std::endl;
-  std::cout << title << std::endl;
+
+  // format the string so that it stays in the lines
+  std::string remaining(title);
+  while (remaining.length() > 79) {
+    int index = 0;
+    for (int i = 79; i >= 0; --i) {
+      if (remaining[i] == ' ') {
+        index = i;
+        break;
+      }
+    }
+    for (int i = 0; i < index; ++i) {
+      std::cout << remaining[i];
+    }
+    std::cout << std::endl;
+    remaining.erase(remaining.begin(), remaining.begin() + index + 1);
+  }
+  std::cout << remaining << std::endl;
+  
   std::cout << banner << std::endl << std::endl;
 }
 #endif
