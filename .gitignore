@@ -1,12 +1,8 @@
-# Compiled Object files
-*.slo
-*.lo
+# DGC
 *.o
-
-# Compiled Dynamic libraries
-*.so
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.lib
+*.exe
+debug.log
+#*#
+*~
+*.exe.stackdump
